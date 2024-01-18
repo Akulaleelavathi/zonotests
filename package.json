@@ -1,0 +1,8 @@
+{
+  "name": "qa-automation",
+  "version": "1.0.0",
+  "description": "QA Automation project with postman & newman for zono apis",
+  "main": "index.js",
+  "repository": "https://github.com/nitinmp/zono-qa-automation.git",
+  "license": "MIT"
+}
