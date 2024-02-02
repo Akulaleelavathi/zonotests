@@ -11,7 +11,7 @@ class Schems(Base):
     def get_schems(self, workspaces_data):
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/scheme/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageNo=1&pageSize=20&skuCode=&sortDirection=&sortBy=&includeCFA=true&startDate=2023-12-12&endDate=2024-01-11&dispatchFilters=true&status=&promotionType=",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/scheme/{workspaces_data}?pageNo=1&pageSize=20&skuCode=&sortDirection=&sortBy=&includeCFA=true&startDate=2023-12-12&endDate=2024-01-11&dispatchFilters=true&status=&promotionType=",
             payload={
                     "cfaFilter": [],
                     "divisionFilter": []

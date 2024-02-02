@@ -1,0 +1,25 @@
+{           "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            "customerId": "",
+            "pageNo": 1,
+            "pageSize": 197,
+            "sortBy": "orderPlacedAt",
+            "sortDirection": "DESC",
+            "includeSummary": true,
+            "includeInvoice": true,
+            "includeCustomer": true,
+            "includeStatus": true,
+            "includeCFA": true,
+            "includeDivision": true,
+            "searchKeyword": "",
+            "startDate": "2024-01-24",
+            "endDate": "2024-01-31",
+            "filterModel": {
+                "headDivisionIds": [],
+                "divisionIds": [],
+                "cfaIds": [],
+                "status": [],
+                "customerIds": []
+            },
+            "skip": 1
+        }
+

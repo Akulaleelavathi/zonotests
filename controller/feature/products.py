@@ -22,7 +22,7 @@ class Product(Base):
         payload_json_data = read_json(payload_template)
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageNo=1&pageSize=20&customerId=",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{workspaces_data}?pageNo=1&pageSize=20&customerId=",
             payload=payload_json_data
 
         )
@@ -51,14 +51,14 @@ class Product(Base):
             payload_json_data.update(update_division)
             res = self.send_request(
                 Base.RequestMethod.POST,
-                custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageNo=1&pageSize=20&customerId=",
+                custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{workspacedata}?pageNo=1&pageSize=20&customerId=",
                 payload=payload_json_data
 
             )
             ist.append(res.json)
         return ist
 
-    def get_cfafilter(self, product_data, workspacedata):
+    def get_cfafilter(self,product_data, workspacedata):
         response_json = product_data.json
 
         ist_data = []
@@ -67,9 +67,9 @@ class Product(Base):
                 for k in j["cfas"]:
                     ist_data.append(str(k["cfaId"]))
 
-
         a = set(ist_data)
         b = list(a)
+        cfa1=b
         payload_template = r"C:\Users\Lenovo\Downloads\zono-qa-automation-main\zono-qa-automation-main\data\product.json"
         payload_json_data = read_json(payload_template)
         update_cfa={
@@ -80,7 +80,7 @@ class Product(Base):
         payload_json_data.update(update_cfa)
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageNo=1&pageSize=20&customerId=",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{workspacedata}?pageNo=1&pageSize=20&customerId=",
 
             payload=payload_json_data
 
@@ -88,7 +88,7 @@ class Product(Base):
 
         )
 
-        return res.json
+        return res,cfa1
 
 
     def get_schemesfilter(self,product_data, workspacedata):
@@ -102,12 +102,15 @@ class Product(Base):
         payload_json_data.update(update_schemes)
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageNo=1&pageSize=20&customerId=",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{workspacedata}?pageNo=1&pageSize=20&customerId=",
             payload=payload_json_data
         )
-        return res.json
+        return res.json,update_schemes
 
-    def get_activeinactive(self,product_data,workspace):
+
+
+
+    def get_status(self,product_data,workspace):
         payload_template = r"C:\Users\Lenovo\Downloads\zono-qa-automation-main\zono-qa-automation-main\data\product.json"
         payload_json_data = read_json(payload_template)
         update_activeinactive = {
@@ -116,12 +119,34 @@ class Product(Base):
         payload_json_data.update(update_activeinactive)
         res = self.send_request(
             Base.RequestMethod.POST,
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{workspace}?pageNo=1&pageSize=20&customerId=",
+            payload=payload_json_data
+        )
+        return res
+
+
+
+    def get_statuss(self,product_data,workspace):
+        payload_template = r"C:\Users\Lenovo\Downloads\zono-qa-automation-main\zono-qa-automation-main\data\product.json"
+        payload_json_data = read_json(payload_template)
+        update_activeinactive = {
+            "statusFilter": "INACTIVE"
+        }
+        payload_json_data.update(update_activeinactive)
+        res = self.send_request(
+            Base.RequestMethod.POST,
             custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageNo=1&pageSize=20&customerId=",
             payload=payload_json_data
         )
-        return res.json
+        return res
+
+
+
+
+
 
     def get_skufilter(self,product_data,workspace):
+        global update_skufilter, payload_json_data
         response_json = product_data.json
         a_list = []
         for i in response_json['products']:
@@ -138,10 +163,10 @@ class Product(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageNo=1&pageSize=20&customerId=",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/{workspace}?pageNo=1&pageSize=20&customerId=",
             payload=payload_json_data
         )
 
-        return res.json
+        return res,update_skufilter
 
 

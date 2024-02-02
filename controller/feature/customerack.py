@@ -14,7 +14,7 @@ class Customerack(Base):
     def waitingforack(self,workspaces_data):
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspaces_data}",
             payload={
             "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
             "customerId": "",
@@ -60,7 +60,7 @@ class Customerack(Base):
         # return customer_id
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{order_id}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspaces_data}/{order_id}?includeInvoice=true",
             payload={
                 "filter": {
                     "divisionIds": []
@@ -89,7 +89,7 @@ class Customerack(Base):
     def checkout(self,workspaces_data,singlecustomer):
        res=self.send_request(
            Base.RequestMethod.POST,
-           custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+           custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/{workspaces_data}",
            payload= [
                {
                 "orderId":singlecustomer,

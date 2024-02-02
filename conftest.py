@@ -4,10 +4,11 @@ from controller.settings import Settings
 from controller.feature.users import *
 from controller.feature.products import Product
 from controller.feature.schems import Schems
-from controller.feature.manualorder import CustomerId
+from controller.feature.manualorder import CustomerIds
 from controller.feature.uploadorder import CustomerId
 from controller.feature.customerack import Customerack
-
+from controller.feature.customersdata import Customersdatas
+from controller.feature.orders import Orders
 
 
 def pytest_addoption(parser):
@@ -73,12 +74,9 @@ def return_schems(setup,workspacedata):
     return Schems
 
 @pytest.fixture(scope="session")
-def return_manual(setup,workspacedata):
-    manualorder= CustomerId(setup)
-    manualorder.customer_data=manualorder.get_customerid(workspacedata)
-    manualorder.placeorderdetails=manualorder.get_placeorderdetails(manualorder.customer_data,workspacedata)
-    manualorder.addtocard=manualorder.get_addtocard(manualorder.customer_data,workspacedata, manualorder.placeorderdetails)
-    manualorder.checkout=manualorder.get_checkout(manualorder.customer_data,workspacedata,manualorder.addtocard)
+def return_manual(setup, workspacedata):
+    manualorder = CustomerIds(setup)
+    manualorder.customer_data = manualorder.get_customerid(workspacedata)
     return manualorder
 
 @pytest.fixture(scope="session")
@@ -98,9 +96,22 @@ def customerack(setup,workspacedata):
     customerack.checkout=customerack.checkout(workspacedata,customerack.singlecustomer)
     return customerack
 
+@pytest.fixture(scope="session")
+def return_customerdata(setup,workspacedata):
+    customerdata1=Customersdatas(setup)
+    customerdata1.customersdata2=customerdata1.customersdata1(workspacedata)
+    return customerdata1
 
 
+@pytest.fixture(scope="session")
+def return_orders(setup,workspacedata):
+    ordersdata1=Orders(setup)
+    ordersdata1.ordersdata2=ordersdata1.ordersdata(workspacedata)
+    ordersdata1.ordersdata3=ordersdata1.singleorderinall(ordersdata1,workspacedata)
+    ordersdata1.ordersdata4=ordersdata1.waitingforcfadatadetails(workspacedata)
+    ordersdata1.ordersdata5=ordersdata1.singleorderinwfc(ordersdata1,workspacedata)
 
+    return ordersdata1
 
 
 
