@@ -14,6 +14,81 @@ class Customersdatas(Base):
         )
         return res
 
+
+    def customerdatafororders(self,return_customerdata,workspaces_data,return_orders):
+        response_json = return_orders.ordersdata5
+        # print(f"return the response_json single customer{response_json}")
+        res = response_json[0].json
+        customer_id_res=res["customerId"]
+
+
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/customer/{workspaces_data}?pageNo=1&pageSize=20&customerId={customer_id_res}",
+            payload={
+            "includeFacets": True,
+            "includeDivisions": True,
+            "includeCfas": True,
+            "skuCode": "",
+            "sortDirection": "ASC",
+            "sortBy": "",
+            "inventoryFilter": "",
+            "stockFilter": "",
+            "divisionIds": [],
+            "cfaIds": [],
+            "statusFilter": "",
+            "collectionIds": [],
+            "customerId":customer_id_res
+        })
+        return res
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def customercodefilter(self,return_customerdata,workspaces_data):
         response_json=return_customerdata.customersdata2.json
         # print(f"return the response_customer{response_json}")

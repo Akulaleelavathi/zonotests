@@ -708,6 +708,30 @@ class Orders(Base):
             })
         return res,lst
 
+    def manual_invoicedfilter(self, return_orders, workspacedata):
+      customer_id="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
+      id=38869
+
+      res = self.send_request(
+          Base.RequestMethod.POST,
+          custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+          payload={
+              "filter": {
+                  "invoice": "notInvoiced",
+                  "divisionIds": []
+              },
+              "searchKey": "",
+              "includeInvoice": True,
+              "includeTax": True,
+              "includeCustomer": True,
+              "includePromotions": True,
+              "sortDirection": "DESC",
+              "sortBy": "",
+              "customerId": customer_id
+          })
+      return res
+
+
 
     def Notinvoicedfilter(self, return_orders, workspacedata):
         response_json = return_orders.ordersdata3
@@ -734,7 +758,31 @@ class Orders(Base):
                 "sortBy": "",
                 "customerId": lst[0][1]
             })
-        return res,
+        return res,lst
+    def manual_Notinvoicedfilter(self, return_orders, workspacedata):
+      customer_id="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
+      id=38869
+
+      res = self.send_request(
+          Base.RequestMethod.POST,
+          custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+          payload={
+              "filter": {
+                  "invoice": "notInvoiced",
+                  "divisionIds": []
+              },
+              "searchKey": "",
+              "includeInvoice": True,
+              "includeTax": True,
+              "includeCustomer": True,
+              "includePromotions": True,
+              "sortDirection": "DESC",
+              "sortBy": "",
+              "customerId": customer_id
+          })
+      return res
+
+
 
     def schemsappiledfilter(self, return_orders, workspacedata):
         response_json = return_orders.ordersdata3
@@ -762,6 +810,56 @@ class Orders(Base):
                 "customerId": lst[0][1]
             })
         return res, lst
+
+    def manual_schemsappiledfilter(self, return_orders, workspacedata):
+       id=38910
+       customer_id="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
+
+       res = self.send_request(
+           Base.RequestMethod.POST,
+           custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+           payload={
+               "filter": {
+                   "scheme": "Applied",
+                   "divisionIds": []
+               },
+               "searchKey": "",
+               "includeInvoice": True,
+               "includeTax": True,
+               "includeCustomer": True,
+               "includePromotions": True,
+               "sortDirection": "DESC",
+               "sortBy": "",
+               "customerId": customer_id
+           })
+       return res
+
+
+
+    def manual_schemsnotappiledfilter(self, return_orders, workspacedata):
+       id=38910
+       customer_id="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
+
+       res = self.send_request(
+           Base.RequestMethod.POST,
+           custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+           payload={
+               "filter": {
+                   "scheme": "NotApplied",
+                   "divisionIds": []
+               },
+               "searchKey": "",
+               "includeInvoice": True,
+               "includeTax": True,
+               "includeCustomer": True,
+               "includePromotions": True,
+               "sortDirection": "DESC",
+               "sortBy": "",
+               "customerId": customer_id
+           })
+       return res
+
+
 
 
 
@@ -801,30 +899,32 @@ class Orders(Base):
             Base.RequestMethod.POST,
             custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
             payload={
-                "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
-                "customerId": "",
-                "pageNo": 1,
-                "pageSize": 105,
-                "sortBy": "orderPlacedAt",
-                "sortDirection": "DESC",
-                "includeSummary": True,
-                "includeInvoice": True,
-                "includeCustomer": True,
-                "includeStatus": True,
-                "includeCFA": True,
-                "includeDivision": True,
-                "searchKeyword": "",
-                "startDate": "2024-01-26",
-                "endDate": "2024-02-02",
-                "filterModel": {
-                    "cfaIds": [],
-                    "status": [
-                        "SubmittedByCustomer"
-                    ],
-                    "customerIds": []
-                },
-                "skip": 1
-            })
+
+                    "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                    "customerId": "",
+                    "pageNo": 1,
+                    "pageSize": 20,
+                    "sortBy": "orderPlacedAt",
+                    "sortDirection": "DESC",
+                    "includeSummary": True,
+                    "includeInvoice": True,
+                    "includeCustomer": True,
+                    "includeStatus": True,
+                    "includeCFA": True,
+                    "includeDivision": True,
+                    "searchKeyword": "",
+                    "startDate": "2024-01-30",
+                    "endDate": "2024-02-06",
+                    "filterModel": {
+                        "cfaIds": [],
+                        "status": [
+                            "SubmittedByCustomer"
+                        ],
+                        "customerIds": []
+                    },
+                    "skip": 1
+                })
+
         return res
 
     def importsourceuploadfilterwfc(self, return_orders, workspacedata):
@@ -985,86 +1085,6 @@ class Orders(Base):
         return res, lst
 
 
-    # def orderstatusWaitingForCNFfilterwfc(self, return_orders, workspacedata):
-    #     response_json = return_orders.ordersdata4.json
-    #     lst = []
-    #     for i in response_json["order"]:
-    #         if (i["status"] == "WaitingForCNF"):
-    #             lst.append(i)
-    #
-    #     res = self.send_request(
-    #         Base.RequestMethod.POST,
-    #         custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
-    #         payload={
-    #             "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
-    #             "customerId": "",
-    #             "pageNo": 1,
-    #             "pageSize": 20,
-    #             "sortBy": "orderPlacedAt",
-    #             "sortDirection": "DESC",
-    #             "includeSummary": True,
-    #             "includeInvoice": True,
-    #             "includeCustomer": True,
-    #             "includeStatus": True,
-    #             "includeCFA": True,
-    #             "includeDivision": True,
-    #             "searchKeyword": "",
-    #             "startDate": "2024-01-25",
-    #             "endDate": "2024-02-01",
-    #             "filterModel": {
-    #                 "headDivisionIds": [],
-    #                 "cfaIds": [],
-    #                 "status": [
-    #                     "WaitingForCNF"
-    #                 ],
-    #                 "customerIds": []
-    #             },
-    #             "skip": 1
-    #         }
-    #
-    #     )
-    #     return res, lst
-
-
-    # def orderstatusfilterconfirmedwfc(self, return_orders, workspacedata):
-    #     response_json = return_orders.ordersdata4.json
-    #     lst = []
-    #     for i in response_json["order"]:
-    #         if (i["status"] == "Confirmed"):
-    #             lst.append(i)
-    #
-    #     res = self.send_request(
-    #         Base.RequestMethod.POST,
-    #         custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
-    #         payload={
-    #             "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
-    #             "customerId": "",
-    #             "pageNo": 1,
-    #             "pageSize": 20,
-    #             "sortBy": "orderPlacedAt",
-    #             "sortDirection": "DESC",
-    #             "includeSummary": True,
-    #             "includeInvoice": True,
-    #             "includeCustomer": True,
-    #             "includeStatus": True,
-    #             "includeCFA": True,
-    #             "includeDivision": True,
-    #             "searchKeyword": "",
-    #             "startDate": "2024-01-25",
-    #             "endDate": "2024-02-01",
-    #             "filterModel": {
-    #                 "headDivisionIds": [],
-    #                 "cfaIds": [],
-    #                 "status": [
-    #                     "Confirmed"
-    #                 ],
-    #                 "customerIds": []
-    #             },
-    #             "skip": 1
-    #         }
-    #     )
-    #     return res, lst
-
 
     def orderstatusSubmittedwfc(self, return_orders, workspacedata):
         response_json = return_orders.ordersdata4.json
@@ -1105,46 +1125,6 @@ class Orders(Base):
 
         )
         return res, lst
-
-    # def orderstatusBilledwfc(self, return_orders, workspacedata):
-    #     response_json = return_orders.ordersdata4.json
-    #     lst = []
-    #     for i in response_json["order"]:
-    #         if (i["status"] == "Billed"):
-    #             lst.append(i)
-    #
-    #     res = self.send_request(
-    #         Base.RequestMethod.POST,
-    #         custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
-    #         payload={
-    #             "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
-    #             "customerId": "",
-    #             "pageNo": 1,
-    #             "pageSize": 20,
-    #             "sortBy": "orderPlacedAt",
-    #             "sortDirection": "DESC",
-    #             "includeSummary": True,
-    #             "includeInvoice": True,
-    #             "includeCustomer": True,
-    #             "includeStatus": True,
-    #             "includeCFA": True,
-    #             "includeDivision": True,
-    #             "searchKeyword": "",
-    #             "startDate": "2024-01-25",
-    #             "endDate": "2024-02-01",
-    #             "filterModel": {
-    #                 "headDivisionIds": [],
-    #                 "cfaIds": [],
-    #                 "status": [
-    #                     "Billed"
-    #                 ],
-    #                 "customerIds": []
-    #             },
-    #             "skip": 1
-    #         }
-    #
-    #     )
-    #     return res, lst
 
 
     def searchbyordernumberwfc(self,return_orders, workspacedata):
@@ -1261,6 +1241,33 @@ class Orders(Base):
 
                                                  # wfc singleorder#
 
+    # def singleorderinwfc(self,return_orders, workspacedata):
+    #     response_json = return_orders.ordersdata4.json
+    #     lst = []
+    #     for i in response_json["order"]:
+    #         if i["customerId"] not in lst:
+    #             lst.append((i["id"], i["customerId"],i["skucount"]))
+    #
+    #     res = self.send_request(
+    #         Base.RequestMethod.POST,
+    #         custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[1][0]}?includeInvoice=true",
+    #         payload={
+    #             "filter": {
+    #                 "divisionIds": []
+    #             },
+    #             "searchKey": "",
+    #             "includeInvoice": True,
+    #             "includeTax": True,
+    #             "includeCustomer": True,
+    #             "includePromotions": True,
+    #             "sortDirection": "DESC",
+    #             "sortBy": "pts",
+    #             "customerId":lst[1][1]
+    #         })
+    #
+    #     return res,lst
+
+
     def singleorderinwfc(self,return_orders, workspacedata):
         response_json = return_orders.ordersdata4.json
         lst = []
@@ -1270,7 +1277,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[19][0]}?includeInvoice=true",
+            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/38889?includeInvoice=true",
             payload={
                 "filter": {
                     "divisionIds": []
@@ -1282,10 +1289,12 @@ class Orders(Base):
                 "includePromotions": True,
                 "sortDirection": "DESC",
                 "sortBy": "pts",
-                "customerId": lst[19][1]
+                "customerId": "3eef6837-80e5-468d-b8f3-8c2cea04506a"
             })
 
         return res,lst
+
+
 
     def particalsearchbysku_or_producttitlewfc(self, return_orders, workspacedata):
         response_json= return_orders.ordersdata5
@@ -1412,6 +1421,28 @@ class Orders(Base):
             })
         return res, lst
 
+    def manualinvoicedfilterwfc(self, return_orders, workspacedata):
+        customer_number="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
+        id=38869
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+            payload={
+                "filter": {
+                    "invoice": "invoiced",
+                    "divisionIds": []
+                },
+                "searchKey": "",
+                "includeInvoice": True,
+                "includeTax": True,
+                "includeCustomer": True,
+                "includePromotions": True,
+                "sortDirection": "DESC",
+                "sortBy": "",
+                "customerId":customer_number
+            })
+        return res
+
     def Notinvoicedfilterwfc(self, return_orders, workspacedata):
         response_json = return_orders.ordersdata5
         res = response_json[0]
@@ -1425,7 +1456,7 @@ class Orders(Base):
             custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
-                    "invoice": "Notinvoiced",
+                    "invoice": "notInvoiced",
                     "divisionIds": []
                 },
                 "searchKey": "",
@@ -1438,6 +1469,29 @@ class Orders(Base):
                 "customerId": lst[0][1]
             })
         return res,
+
+    def manual_Notinvoicedfilterwfc(self, return_orders, workspacedata):
+      customer_id="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
+      id=38869
+
+      res = self.send_request(
+          Base.RequestMethod.POST,
+          custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+          payload={
+              "filter": {
+                  "invoice": "notInvoiced",
+                  "divisionIds": []
+              },
+              "searchKey": "",
+              "includeInvoice": True,
+              "includeTax": True,
+              "includeCustomer": True,
+              "includePromotions": True,
+              "sortDirection": "DESC",
+              "sortBy": "",
+              "customerId": customer_id
+          })
+      return res
 
     def schemsappiledfilterwfc(self, return_orders, workspacedata):
         response_json = return_orders.ordersdata5
@@ -1466,6 +1520,56 @@ class Orders(Base):
             })
         return res, lst
 
+    def manual_schemsappiledfilterwfc(self, return_orders, workspacedata):
+       id=38910
+       customer_id="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
+
+       res = self.send_request(
+           Base.RequestMethod.POST,
+           custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+           payload={
+               "filter": {
+                   "scheme": "Applied",
+                   "divisionIds": []
+               },
+               "searchKey": "",
+               "includeInvoice": True,
+               "includeTax": True,
+               "includeCustomer": True,
+               "includePromotions": True,
+               "sortDirection": "DESC",
+               "sortBy": "",
+               "customerId": customer_id
+           })
+       return res
+
+
+
+    def manual_schemsnotappiledfilterwfc(self, return_orders, workspacedata):
+       id=38895
+       customer_id="3eef6837-80e5-468d-b8f3-8c2cea04506a"
+
+       res = self.send_request(
+           Base.RequestMethod.POST,
+           custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+           payload={
+               "filter": {
+                   "scheme": "NotApplied",
+                   "divisionIds": []
+               },
+               "searchKey": "",
+               "includeInvoice": True,
+               "includeTax": True,
+               "includeCustomer": True,
+               "includePromotions": True,
+               "sortDirection": "DESC",
+               "sortBy": "",
+               "customerId": customer_id
+           })
+       return res
+
+
+
     def schemsnotappiledfilterwfc(self, return_orders, workspacedata):
         response_json = return_orders.ordersdata5
         res = response_json[0]
@@ -1489,8 +1593,219 @@ class Orders(Base):
                 "includePromotions": True,
                 "sortDirection": "DESC",
                 "sortBy": "",
-                "customerId": lst[0][1]
+                 "customerId": lst[0][1]
             })
+        return res, lst
+
+
+
+    def editincrement(self,return_orders, workspacedata):
+        response_json = return_orders.ordersdata5
+        res = response_json[0]
+        lst = []
+        i = res.json
+        order_id = i["id"]
+        customer_id = i["customerId"]
+        for j in i["lines"]:
+            lst.append((j["productVariant"]["id"],j["minOrderQty"]))
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            payload={
+                "orderId": order_id,
+                "customerId": customer_id,
+                "lines": [
+                    {
+                        "productVariantId": lst[1][0],
+                        "quantity": lst[1][1] + 1
+                    }
+                ]
+            })
+        return res,lst
+
+
+
+    def manual_editincrement(self,return_orders, workspacedata):
+        order_id = 38895
+        customer_id="3eef6837-80e5-468d-b8f3-8c2cea04506a"
+        productVariantId= 32825
+        quantity= 10
+
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            payload={
+                "orderId": order_id,
+                "customerId": customer_id,
+                "lines": [
+                    {
+                        "productVariantId": productVariantId,
+                        "quantity": quantity + 1
+                    }
+                ]
+            })
+        return res
+
+    def editdecrement(self, return_orders, workspacedata):
+        response_json = return_orders.ordersdata5
+        res = response_json[0]
+        lst = []
+        i = res.json
+        order_id = i["id"]
+        customer_id = i["customerId"]
+        for j in i["lines"]:
+            lst.append((j["productVariant"]["id"], j["minOrderQty"], j["quantity"]))
+        min_quantity = lst[1][1]
+        quantity = lst[1][2]
+
+        if quantity > min_quantity:
+            res = self.send_request(
+                Base.RequestMethod.POST,
+                custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                payload={
+                    "orderId": order_id,
+                    "customerId": customer_id,
+                    "lines": [
+                        {
+                            "productVariantId": lst[1][0],
+                            "quantity": lst[1][1] - 1
+                        }
+                    ]
+                })
+            return res, lst
+        else:
+            print("Error: Quantity is already less than or equal to the minimum quantity")
+            res = self.send_request(
+                Base.RequestMethod.POST,
+                custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                payload={
+                    "orderId": order_id,
+                    "customerId": customer_id,
+                    "lines": [
+                        {
+                            "productVariantId": lst[1][0],
+                            "quantity": lst[1][1]
+                        }
+                    ]
+                })
+            return res, lst
+
+
+    def manual_editdecrement(self,return_orders, workspacedata):
+        order_id = 38895
+        customer_id="3eef6837-80e5-468d-b8f3-8c2cea04506a"
+        productVariantId= 32825
+        min_quantity = 10
+        quantity=20
+        if quantity > min_quantity:
+                res = self.send_request(
+                    Base.RequestMethod.POST,
+                    custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                    payload={
+                        "orderId": order_id,
+                        "customerId": customer_id,
+                        "lines": [
+                            {
+                                "productVariantId": productVariantId,
+                                "quantity": quantity - min_quantity
+                            }
+                        ]
+                    })
+                return res
+        else:
+            print("Error: Quantity is already less than or equal to the minimum quantity")
+            res = self.send_request(
+                Base.RequestMethod.POST,
+                custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                payload={
+                    "orderId": order_id,
+                    "customerId": customer_id,
+                    "lines": [
+                        {
+                             "productVariantId": productVariantId,
+                                "quantity": quantity
+                            }]
+                })
+            return res
+
+
+
+
+
+
+    def editadd_product(self,return_orders, workspacedata,product_list):
+
+
+        response_json = return_orders.ordersdata5
+        ress = response_json[0]
+        lst = []
+        i = ress.json
+        order_id = i["id"]
+        customer_id = i["customerId"]
+        for j in i["lines"]:
+            lst.append((j["productVariant"]["id"], j["minOrderQty"], j["quantity"]))
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            payload={
+                "orderId": order_id,
+                "customerId": customer_id,
+                "lines": [
+                             {
+                                 "productVariantId": k[0],
+                                 "quantity": k[2]
+                             }
+                             for k in lst
+                         ] + [
+                             {
+                                 "productVariantId": product_list[1][0],
+                                 "quantity": product_list[1][1]
+                             }
+                             # for i in product_list
+                         ]
+            })
+        return res,lst
+
+    def editdelete_product(self, return_orders, workspacedata):
+
+        response_json = return_orders.ordersdata5
+        ress = response_json[0]
+        lst = []
+        i = ress.json
+        order_id = i["id"]
+        customer_id = i["customerId"]
+        for j in i["lines"]:
+            lst.append((j["productVariant"]["id"], j["minOrderQty"], j["quantity"]))
+
+        payload_list = [
+            {
+                "productVariantId": k[0],
+                "quantity": k[2],
+                "count": count
+            }
+            for count, k in enumerate(lst[:-1], start=1)
+        ]
+        a=[{"productVariantId": k[0], "quantity": k[2]} for k in lst[:-1]]
+        b = [{"productVariantId": lst[len(lst)-1][0], "quantity": 0}]
+
+        main_data = []
+        for i in a:
+            main_data.append(i)
+        for j in b:
+            main_data.append(j)
+        # print(payload_list)
+        print(main_data)
+        res = self.send_request(
+            Base.RequestMethod.POST,
+            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            payload={
+                "orderId": order_id,
+                "customerId": customer_id,
+                "lines":main_data
+
+            }
+        )
+
         return res, lst
 
 

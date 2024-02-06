@@ -117,24 +117,7 @@ class CustomerIds(Base):
         print(res)
 
 
-#     def getdec(self, workspaces_data,customer_data,test_getaddtocard):
-#         res = self.send_request(
-#             Base.RequestMethod.POST,
-#             custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/additemtoactiveorder/8ef5d569-3419-44e5-bb33-3ecfd260f796",
-#             payload={
-#             "customerId":customer_data[1],
-#             "sellerWorkspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
-#             "poFileId": test_getaddtocard[0]["pofileId"],
-#             "source": "manual",
-#             "lines": [
-#                 {
-#                     "productVariantId": test_getaddtocard[1]["productVariantId"],
-#                     "quantity": 9,
-#                     "operator": "minus",
-#                     "poFileLineId":test_getaddtocard[1]["ids"]
-#                 }
-#             ]
-# })
+
 
     def getdec(self, workspaces_data, customer_data, test_getaddtocard):
         min_quantity = test_getaddtocard[1]["quantity"]
