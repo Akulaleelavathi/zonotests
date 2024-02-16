@@ -13,7 +13,7 @@ class Orders(Base):
     def ordersdata(self,workspaces_data):
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspaces_data}",
             payload={
             "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
             "customerId": "",
@@ -53,7 +53,7 @@ class Orders(Base):
 
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
 
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
@@ -95,7 +95,7 @@ class Orders(Base):
 
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
 
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
@@ -140,7 +140,7 @@ class Orders(Base):
 
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
 
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
@@ -180,7 +180,7 @@ class Orders(Base):
 
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
         payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                 "customerId": "",
@@ -222,7 +222,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                     "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                     "customerId": "",
@@ -263,7 +263,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
             "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
             "customerId": "",
@@ -304,7 +304,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                 "customerId": "",
@@ -347,7 +347,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                 "customerId": "",
@@ -386,7 +386,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                     "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                     "customerId": "",
@@ -427,7 +427,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                     "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                     "customerId": "",
@@ -461,7 +461,7 @@ class Orders(Base):
         lst = "3080875"
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                     "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                     "customerId": "",
@@ -508,7 +508,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "divisionIds": []
@@ -536,7 +536,7 @@ class Orders(Base):
         number = "0000000000011"
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/customer/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageSize=20&customerId={lst[0]}",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/customer/{workspacedata}?pageSize=20&customerId={lst[0]}",
             payload={
 
                 "includeFacets": True,
@@ -559,7 +559,7 @@ class Orders(Base):
         number = lst[0][1]
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/customer/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageSize=20&customerId={lst[0][0]}",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/customer/{workspacedata}?pageSize=20&customerId={lst[0][0]}",
             payload={
 
                 "includeFacets": True,
@@ -582,7 +582,7 @@ class Orders(Base):
         number = lst[0][1]
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/customer/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageSize=20&customerId={lst[0][0]}",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/customer/{workspacedata}pageSize=20&customerId={lst[0][0]}",
             payload={
 
                 "includeFacets": True,
@@ -605,7 +605,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
 
             payload={
                     "filter": {
@@ -635,7 +635,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "divisionIds": [],
@@ -663,7 +663,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "divisionIds": [],
@@ -691,7 +691,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "invoice": "invoiced",
@@ -714,7 +714,7 @@ class Orders(Base):
 
       res = self.send_request(
           Base.RequestMethod.POST,
-          custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+          custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{id}?includeInvoice=true",
           payload={
               "filter": {
                   "invoice": "notInvoiced",
@@ -743,7 +743,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "invoice": "Notinvoiced",
@@ -765,7 +765,7 @@ class Orders(Base):
 
       res = self.send_request(
           Base.RequestMethod.POST,
-          custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+          custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/8{workspacedata}/{id}?includeInvoice=true",
           payload={
               "filter": {
                   "invoice": "notInvoiced",
@@ -794,7 +794,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "scheme": "Applied",
@@ -817,7 +817,7 @@ class Orders(Base):
 
        res = self.send_request(
            Base.RequestMethod.POST,
-           custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+           custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{id}?includeInvoice=true",
            payload={
                "filter": {
                    "scheme": "Applied",
@@ -842,7 +842,7 @@ class Orders(Base):
 
        res = self.send_request(
            Base.RequestMethod.POST,
-           custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+           custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{id}?includeInvoice=true",
            payload={
                "filter": {
                    "scheme": "NotApplied",
@@ -873,7 +873,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "scheme": "NotApplied",
@@ -897,7 +897,7 @@ class Orders(Base):
     def waitingforcfadatadetails(self,workspaces_data):
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspaces_data}",
             payload={
 
                     "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
@@ -936,7 +936,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
 
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
@@ -978,7 +978,7 @@ class Orders(Base):
 
         res=self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
 
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
@@ -1017,7 +1017,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
 
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
@@ -1053,7 +1053,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId=8{workspacedata}",
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                 "customerId": "",
@@ -1095,7 +1095,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                 "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                 "customerId": "",
@@ -1135,7 +1135,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                     "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                     "customerId": "",
@@ -1176,7 +1176,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                     "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                     "customerId": "",
@@ -1210,7 +1210,7 @@ class Orders(Base):
         lst = "3080875"
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders?workspaceId=8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders?workspaceId={workspacedata}",
             payload={
                     "workspaceId": "8ef5d569-3419-44e5-bb33-3ecfd260f796",
                     "customerId": "",
@@ -1277,7 +1277,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/38889?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/38922?includeInvoice=true",
             payload={
                 "filter": {
                     "divisionIds": []
@@ -1289,7 +1289,7 @@ class Orders(Base):
                 "includePromotions": True,
                 "sortDirection": "DESC",
                 "sortBy": "pts",
-                "customerId": "3eef6837-80e5-468d-b8f3-8c2cea04506a"
+                "customerId": "991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
             })
 
         return res,lst
@@ -1306,7 +1306,7 @@ class Orders(Base):
         number = "0000000000011"
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/customer/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageSize=20&customerId={lst[0]}",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/customer/{workspacedata}?pageSize=20&customerId={lst[0]}",
             payload={
 
                 "includeFacets": True,
@@ -1329,7 +1329,7 @@ class Orders(Base):
         number = lst[0][1]
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/customer/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageSize=20&customerId={lst[0][0]}",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/customer/{workspacedata}?pageSize=20&customerId={lst[0][0]}",
             payload={
 
                 "includeFacets": True,
@@ -1352,7 +1352,7 @@ class Orders(Base):
         number = lst[0][1]
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/products/search/customer/8ef5d569-3419-44e5-bb33-3ecfd260f796?pageSize=20&customerId={lst[0][0]}",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/products/search/customer/{workspacedata}?pageSize=20&customerId={lst[0][0]}",
             payload={
 
                 "includeFacets": True,
@@ -1374,7 +1374,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
 
             payload={
                 "filter": {
@@ -1404,7 +1404,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "invoice": "invoiced",
@@ -1426,7 +1426,7 @@ class Orders(Base):
         id=38869
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{id}?includeInvoice=true",
             payload={
                 "filter": {
                     "invoice": "invoiced",
@@ -1453,7 +1453,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "invoice": "notInvoiced",
@@ -1476,7 +1476,7 @@ class Orders(Base):
 
       res = self.send_request(
           Base.RequestMethod.POST,
-          custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+          custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{id}?includeInvoice=true",
           payload={
               "filter": {
                   "invoice": "notInvoiced",
@@ -1503,7 +1503,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "scheme": "Applied",
@@ -1521,12 +1521,12 @@ class Orders(Base):
         return res, lst
 
     def manual_schemsappiledfilterwfc(self, return_orders, workspacedata):
-       id=38910
+       id=38903
        customer_id="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
 
        res = self.send_request(
            Base.RequestMethod.POST,
-           custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+           custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{id}?includeInvoice=true",
            payload={
                "filter": {
                    "scheme": "Applied",
@@ -1546,12 +1546,12 @@ class Orders(Base):
 
 
     def manual_schemsnotappiledfilterwfc(self, return_orders, workspacedata):
-       id=38895
-       customer_id="3eef6837-80e5-468d-b8f3-8c2cea04506a"
+       id=38903
+       customer_id="991a4e99-bd76-4d24-9f04-8a0c2e74a26c"
 
        res = self.send_request(
            Base.RequestMethod.POST,
-           custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{id}?includeInvoice=true",
+           custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{id}?includeInvoice=true",
            payload={
                "filter": {
                    "scheme": "NotApplied",
@@ -1580,7 +1580,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/details/8ef5d569-3419-44e5-bb33-3ecfd260f796/{lst[0][0]}?includeInvoice=true",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/details/{workspacedata}/{lst[0][0]}?includeInvoice=true",
             payload={
                 "filter": {
                     "scheme": "NotApplied",
@@ -1610,7 +1610,7 @@ class Orders(Base):
             lst.append((j["productVariant"]["id"],j["minOrderQty"]))
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/updatedByCfa/{workspacedata}",
             payload={
                 "orderId": order_id,
                 "customerId": customer_id,
@@ -1633,7 +1633,7 @@ class Orders(Base):
 
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/updatedByCfa/{workspacedata}",
             payload={
                 "orderId": order_id,
                 "customerId": customer_id,
@@ -1661,7 +1661,7 @@ class Orders(Base):
         if quantity > min_quantity:
             res = self.send_request(
                 Base.RequestMethod.POST,
-                custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/updatedByCfa/{workspacedata}",
                 payload={
                     "orderId": order_id,
                     "customerId": customer_id,
@@ -1677,7 +1677,7 @@ class Orders(Base):
             print("Error: Quantity is already less than or equal to the minimum quantity")
             res = self.send_request(
                 Base.RequestMethod.POST,
-                custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/updatedByCfa/{workspacedata}",
                 payload={
                     "orderId": order_id,
                     "customerId": customer_id,
@@ -1700,7 +1700,7 @@ class Orders(Base):
         if quantity > min_quantity:
                 res = self.send_request(
                     Base.RequestMethod.POST,
-                    custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                    custom_url=f"https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/{workspacedata}",
                     payload={
                         "orderId": order_id,
                         "customerId": customer_id,
@@ -1716,7 +1716,7 @@ class Orders(Base):
             print("Error: Quantity is already less than or equal to the minimum quantity")
             res = self.send_request(
                 Base.RequestMethod.POST,
-                custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+                custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/updatedByCfa/{workspacedata}",
                 payload={
                     "orderId": order_id,
                     "customerId": customer_id,
@@ -1746,7 +1746,7 @@ class Orders(Base):
             lst.append((j["productVariant"]["id"], j["minOrderQty"], j["quantity"]))
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/updatedByCfa/{workspacedata}",
             payload={
                 "orderId": order_id,
                 "customerId": customer_id,
@@ -1797,7 +1797,7 @@ class Orders(Base):
         print(main_data)
         res = self.send_request(
             Base.RequestMethod.POST,
-            custom_url="https://api-uat.beta.pharmconnect.com/commerce-v2/orders/updatedByCfa/8ef5d569-3419-44e5-bb33-3ecfd260f796",
+            custom_url=f"{self.settings.url_prefix}/commerce-v2/orders/updatedByCfa/{workspacedata}",
             payload={
                 "orderId": order_id,
                 "customerId": customer_id,
@@ -1807,6 +1807,7 @@ class Orders(Base):
         )
 
         return res, lst
+
 
 
 

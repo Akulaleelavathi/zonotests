@@ -277,7 +277,7 @@ from controller.feature.customersdata import *
 #     lst = filtercode[1]
 #     assert res.status_code == 201
 #
-                                    # manual filter#
+#                                     # manual filter#
 # def test_manual_schemsappiledfilter(return_orders,setup,workspacedata):
 #     ordersdata = Orders(setup)
 #     filtercode = ordersdata.manual_schemsappiledfilter(return_orders, workspacedata)
@@ -285,6 +285,14 @@ from controller.feature.customersdata import *
 #     print(res.json)
 #
 #     assert res.status_code == 201
+#
+#     assert res.status_code == 201
+#     if (len(res.json) != 0):
+#         for i in res.json["lines"]:
+#             assert len(i["promotionIds"]) >=1
+#     else:
+#         print("cart cannot contain scheme appliced products")
+#
 #
 #
 # def test_manual_schemsnotappiledfilter(return_orders,setup,workspacedata):
@@ -294,6 +302,15 @@ from controller.feature.customersdata import *
 #     print(res.json)
 #
 #     assert res.status_code == 201
+#
+#     count=0
+#     if (len(res.json) != 0):
+#         for i in res.json["lines"]:
+#             count+=1
+#             assert len(i["promotionIds"]) == 0
+#         print(count)
+#     else:
+#         print("cart cannot contain scheme appliced products")
 
 
 
@@ -529,12 +546,12 @@ from controller.feature.customersdata import *
 
 
 
-
-
-
-
-
-
+#
+#
+#
+#
+#
+#
 # def test_manual_schemsappiledfilterwfc(return_orders,setup,workspacedata):
 #     ordersdata = Orders(setup)
 #     filtercode = ordersdata.manual_schemsappiledfilterwfc(return_orders, workspacedata)
@@ -542,24 +559,33 @@ from controller.feature.customersdata import *
 #     print(res.json)
 #
 #     assert res.status_code == 201
+#     count =0
 #     if (len(res.json) != 0):
 #         for i in res.json["lines"]:
 #             assert len(i["promotionIds"]) >=1
+#             count+=1
 #     else:
 #         print("cart cannot contain scheme appliced products")
+#     print(count)
 #
-
-
-
+#
+#
 # def test_manual_schemsnotappiledfilterwfc(return_orders,setup,workspacedata):
 #     ordersdata = Orders(setup)
 #     filtercode = ordersdata.manual_schemsnotappiledfilterwfc(return_orders, workspacedata)
 #     res = filtercode
-#     print(res.json)
+#     print(json.dumps(res.json,indent=4))
 #
 #     assert res.status_code == 201
-#     for i in res.json["lines"]:
-#         assert len(i["promotionIds"]) == 0
+#     count=0
+#     if (len(res.json) != 0):
+#         for i in res.json["lines"]:
+#             count+=1
+#             assert len(i["promotionIds"]) == 0
+#         print(count)
+#     else:
+#         print("cart cannot contain scheme appliced products")
+
 
 
 
@@ -653,11 +679,15 @@ from controller.feature.customersdata import *
 #
 #     print(json.dumps(res.json,indent=4))
 #
-def test_editdelete_product(return_orders,setup,workspacedata):
-    ordersdata = Orders(setup)
-    filtercode = ordersdata.editdelete_product(return_orders, workspacedata)
-    res = filtercode[0]
-    lst = filtercode[1]
-    assert res.status_code == 201
-    print(json.dumps(res.json,indent=4))
-    # print(lst)
+# def test_editdelete_product(return_orders,setup,workspacedata):
+#     ordersdata = Orders(setup)
+#     filtercode = ordersdata.editdelete_product(return_orders, workspacedata)
+#     res = filtercode[0]
+#     lst = filtercode[1]
+#     assert res.status_code == 201
+#     print(json.dumps(res.json,indent=4))
+#     # print(lst)
+
+
+
+

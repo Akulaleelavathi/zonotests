@@ -33,7 +33,7 @@ class Users(Base):
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {otp['temptoken']}"}
 
         )
-        return res.json["token"]
+        return res
 
 
     def verify_mobile_otp(self,otp):
@@ -68,7 +68,7 @@ class Users(Base):
         )
         logger.warning(f"response of verify_email{res.json}")
 
-        return res.json["token"]
+        return res
 
 
     def get_workspaces(self):

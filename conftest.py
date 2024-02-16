@@ -9,6 +9,12 @@ from controller.feature.uploadorder import CustomerId
 from controller.feature.customerack import Customerack
 from controller.feature.customersdata import Customersdatas
 from controller.feature.orders import Orders
+from controller.feature.division import divisions
+from controller.feature.ledger import ledger
+from controller.feature.invoice import Invoice
+from controller.feature.settings import Setting
+from controller.feature.cfa_member import member
+
 
 
 def pytest_addoption(parser):
@@ -112,6 +118,44 @@ def return_orders(setup,workspacedata):
     ordersdata1.ordersdata5=ordersdata1.singleorderinwfc(ordersdata1,workspacedata)
 
     return ordersdata1
+
+@pytest.fixture(scope="session")
+def return_divisions(setup,workspacedata):
+    division1=divisions(setup)
+    division1.divisiondata=division1.get_divisions(workspacedata)
+    return division1
+
+@pytest.fixture(scope="session")
+def return_ledger(setup,workspacedata):
+    ledger1=ledger(setup)
+    ledger1.ledgerdata=ledger1.get_ledgerdata(workspacedata)
+    return ledger1
+
+
+@pytest.fixture(scope="session")
+def return_invoice(setup,workspacedata):
+    invoice1=Invoice(setup)
+    params={}
+    invoice1.invoicedata=invoice1.get_Invoice_data(workspacedata,params)
+    return invoice1
+@pytest.fixture(scope="session")
+def return_settings(setup,workspacedata):
+    settings1=Setting(setup)
+    settings1.settingsdata=settings1.get_datausersme(workspacedata)
+    settings1.settingsdata1=settings1.get_worspace(workspacedata)
+    return settings1
+
+
+# @pytest.fixture(scope="session")
+# def return_member(setup,workspacedata):
+#     members=member(setup)
+#     members.memberdata=members.get_datausersme(workspacedata)
+#     members.memberdata1=members.get_worspace(workspacedata)
+#     return members
+
+
+
+
 
 
 

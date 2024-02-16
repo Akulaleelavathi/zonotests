@@ -63,7 +63,7 @@ class Base(object):
             _headers = headers
 
         if hasattr(self.settings, "token"):  # checks for existence and non-emptiness
-            _headers["Authorization"] = f'Bearer {self.settings.token}'
+            _headers["Authorization"] = f'Bearer {self.settings.token.json["token"]}'
 
         # new request session
         res = None
@@ -93,6 +93,7 @@ class Base(object):
         # Formalize output logs for all API tests
         logger.info("\n=============URL=================\n")
         logger.info(res_obj.url)
+
         logger.info("\n============Payload==============\n")
         logger.info(payload)
         logger.info("\n============Response=============\n")
